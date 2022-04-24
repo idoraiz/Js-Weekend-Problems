@@ -26,6 +26,21 @@ Output: false
 Explanation: Reads 01 from right to left. Therefore it is not a palindrome.} 
  */
 
-const palindromeNumber = function (x) {};
+const palindromeNumber = function (x) {
+  if (!Number.isInteger(x)) return 'Please enter numbers';
+  x = x.toString();
+  for(let i=0; i<Math.round((x.length)/2); i++ ) {
+    if (x[i] === x[x.length-1-i]) {
+      return true;
+    }
+  }
+  return 'Not a Palinedrome';
+}
+
+console.log(palindromeNumber(121));
+console.log(palindromeNumber(36763));
+console.log(palindromeNumber('abcba'));
+console.log(palindromeNumber(950300));
+console.log(palindromeNumber(00213200));
 
 module.exports = palindromeNumber;

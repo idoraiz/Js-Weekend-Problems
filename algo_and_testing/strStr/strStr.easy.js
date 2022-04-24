@@ -16,19 +16,35 @@ For the purpose of this problem, we will return 0 when needle is an empty string
  
 
 Example 1:
-
 Input : haystack = "hello", needle = "ll"
 Output : 2
-Example 2:
 
+Example 2:
 Input: haystack = "aaaaa", needle = "bba"
 Output: -1
  
-
 Constraints:
 
 1 <= haystack.length, needle.length <= 104
 haystack and needle consist of only lowercase English characters.
  */
 
-const strStr = function (haystack, needle) {};
+const strStr = function(haystack, needle) {
+
+  let haystackLength = haystack.length;
+  let needleLength = needle.length;
+
+  if (!needleLength) return 0;
+
+  for (let i = 0; i < haystackLength; i++) {
+    for (let j = 0; j < needleLength; j++) {
+      if (i + j === haystackLength) return -1;
+      if (haystack[i + j] !== needle[j]) break;
+      if (j === needleLength - 1) return i;
+    }
+  }
+  return -1;
+};
+
+
+module.exports(strStr);

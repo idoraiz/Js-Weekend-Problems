@@ -23,7 +23,24 @@ Output: [1,2]
 Example 3:
 
 Input: nums = [3,3], target = 6
-Output: [0,1]}
+Output: [0,1]
  */
 
-const twoSum = function (nums, target) {};
+const twoSum = function (nums, target) {
+  const previousValues = {} ;
+  for (let i = 0; i < nums.length; i++) {
+      const currentNumber = nums[i];
+      const neededValue = target - currentNumber;
+      const index2 = previousValues[neededValue];
+      
+      if (index2 != null) {
+          return [index2, i];
+      }
+      else {
+          previousValues[currentNumber] = i;
+          
+      }
+  }
+}
+
+module.exports(twoSum);

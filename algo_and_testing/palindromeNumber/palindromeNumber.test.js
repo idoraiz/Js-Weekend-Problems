@@ -8,3 +8,9 @@ test("Example 1", () => {
 test("Example 2", () => {
 	expect(palindromeNumber(-121)).toBe(false);
 });
+
+test("Checking if x is an integer", () => {
+	expect(palindromeNumber('cbabc')).toBe(false);
+});
+
+

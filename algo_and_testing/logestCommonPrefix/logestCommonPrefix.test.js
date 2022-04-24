@@ -8,3 +8,7 @@ test("Example 1", () => {
 test("Example 2", () => {
 	expect(longestCommonPrefix(["dog", "racecar", "car"])).toBe("");
 });
+
+test("Finding first and only common perfix", () => {
+	expect(longestCommonPrefix(["dog", "dill", "deamon"])).toBe("d");
+});
